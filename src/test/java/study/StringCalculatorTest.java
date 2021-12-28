@@ -18,27 +18,32 @@ public class StringCalculatorTest {
 	private int calculate(String string) {
 		String[] strings = string.split(" ");
 
-		int temp = Integer.parseInt(strings[0]);
+		int sum = Integer.parseInt(strings[0]);
 
 		for (int i = 1; i < strings.length; i = i + 2) {
 
-			switch (strings[i]) {
-				case "+":
-					temp = temp + Integer.parseInt(strings[i + 1]);
-					break;
-				case "-":
-					temp = temp - Integer.parseInt(strings[i + 1]);
-					break;
-				case "*":
-					temp = temp * Integer.parseInt(strings[i + 1]);
-					break;
-				case "/":
-					temp = temp / Integer.parseInt(strings[i + 1]);
-					break;
-			}
+			sum = getSum(strings, sum, i);
 		}
 
-		return temp;
+		return sum;
+	}
+
+	private int getSum(String[] strings, int sum, int i) {
+		switch (strings[i]) {
+			case "+":
+				sum = sum + Integer.parseInt(strings[i + 1]);
+				break;
+			case "-":
+				sum = sum - Integer.parseInt(strings[i + 1]);
+				break;
+			case "*":
+				sum = sum * Integer.parseInt(strings[i + 1]);
+				break;
+			case "/":
+				sum = sum / Integer.parseInt(strings[i + 1]);
+				break;
+		}
+		return sum;
 	}
 
 }
