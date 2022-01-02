@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -22,8 +23,12 @@ public class InputController {
 		return intToSet(value);
 	}
 
+	public Set<Integer> getNumber() {
+		return this.number;
+	}
+
 	private Set<Integer> intToSet(int value) {
-		Set<Integer> set = new HashSet<>();
+		Set<Integer> set = new LinkedHashSet<>();
 
 		set.add(value / 100);
 		value -= (value / 100) * 100;
