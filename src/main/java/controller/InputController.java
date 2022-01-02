@@ -82,4 +82,12 @@ public class InputController {
 	}
 
 	//다시시작 입력 기능
+	public boolean restart() {
+		int value = scanner.nextInt();
+		if (value == 1) {
+			return true;
+		}
+
+		return false;
+	}
 }
