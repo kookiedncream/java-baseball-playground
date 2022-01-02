@@ -1,4 +1,4 @@
-package model;
+package service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,4 +28,5 @@ public class Computer {
 	public int getNumberSize() {
 		return answer.size();
 	}
+
 }
