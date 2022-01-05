@@ -2,8 +2,8 @@ package baseball;
 
 public class Ball {
 
-	private static int position;
-	private static int value;
+	private final int position;
+	private final int value;
 
 	public Ball(int position, int value) {
 		this.position = position;
