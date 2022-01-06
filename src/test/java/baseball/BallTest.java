@@ -61,4 +61,38 @@ public class BallTest {
 		BallStatus status = com.play(new Ball(2, 6));
 		assertThat(status).isEqualTo(BallStatus.NOTHING);
 	}
+
+
+	@Test
+	@DisplayName("숫자가 3개일 때 판단 기능 구현(3스트라이크/게임 끝)")
+	void match3() {
+		Balls userBalls = new Balls(Arrays.asList(1, 2, 3));
+		Judge answer = new Judge(userBalls, computer);
+		int strike = answer.getStrike();
+		int ball = answer.getBall();
+
+		assertThat(strike).isEqualTo(3);
+		assertThat(ball).isEqualTo(0);
+		assertThat(answer.isGameEnd()).isTrue();
+	}
+
+	@Test
+	@DisplayName("숫자가 3개일 때 판단 기능 구현(2볼 1스트라이크)")
+	void match21() {
+		Balls userBalls = new Balls(Arrays.asList(2, 1, 3));
+		Judge answer = new Judge(userBalls, computer);
+		int strike = answer.getStrike();
+		int ball = answer.getBall();
+
+		assertThat(strike).isEqualTo(1);
+		assertThat(ball).isEqualTo(2);
+	}
+	@Test
+	@DisplayName("숫자가 3개일 때 판단 기능 구현(낫싱)")
+	void match0() {
+		Balls userBalls = new Balls(Arrays.asList(4, 5, 6));
+		Judge answer = new Judge(userBalls, computer);
+
+		assertThat(answer.isNothing()).isTrue();
+	}
 }

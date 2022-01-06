@@ -22,4 +22,14 @@ public class Balls {
 	public int getValue(int position) {
 		return balls.get(position).getValue();
 	}
+
+
+	public BallStatus play(Ball userBall) {
+
+		return balls.stream()
+				.map(answer -> answer.play(userBall))
+				.filter(status -> status != BallStatus.NOTHING)
+				.findFirst()
+				.orElse(BallStatus.NOTHING);
+	}
 }
