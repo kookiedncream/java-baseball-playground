@@ -17,4 +17,27 @@ public class Ball {
 	public int getValue() {
 		return this.value;
 	}
+
+	public BallStatus play(Ball ball) {
+		if (this.equals(ball)) {
+			return BallStatus.STRIKE;
+		}
+		if (matchBallValue(ball.getValue(), this.value)) {
+			return BallStatus.BALL;
+		}
+
+		return BallStatus.NOTHING;
+	}
+
+	private boolean matchBallValue(int value, int p) {
+		return value == p;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Ball ball = (Ball) o;
+		return position == ball.position && value == ball.value;
+	}
 }

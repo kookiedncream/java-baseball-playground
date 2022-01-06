@@ -39,4 +39,26 @@ public class BallTest {
 		assertThat(value2).isEqualTo(2);
 		assertThat(value3).isEqualTo(3);
 	}
+
+	@Test
+	@DisplayName("숫자가 1개일 때 스트라이크 기능 구현")
+	void strike1() {
+		Ball com = new Ball(1, 5);
+		BallStatus status = com.play(new Ball(1, 5));
+		assertThat(status).isEqualTo(BallStatus.STRIKE);
+	}
+	@Test
+	@DisplayName("숫자가 1개일 때 볼 기능 구현")
+	void ball1() {
+		Ball com = new Ball(1, 5);
+		BallStatus status = com.play(new Ball(2, 5));
+		assertThat(status).isEqualTo(BallStatus.BALL);
+	}
+	@Test
+	@DisplayName("숫자가 1개일 때 낫싱 기능 구현")
+	void nothing1() {
+		Ball com = new Ball(1, 5);
+		BallStatus status = com.play(new Ball(2, 6));
+		assertThat(status).isEqualTo(BallStatus.NOTHING);
+	}
 }
