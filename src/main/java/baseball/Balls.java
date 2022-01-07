@@ -39,7 +39,7 @@ public class Balls {
 
 	private List<Ball> getBalls(List<Integer> ball) {
 		List<Ball> list = new ArrayList<>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < ball.size(); i++) {
 			list.add(new Ball(i, ball.get(i)));
 		}
 		return list;
