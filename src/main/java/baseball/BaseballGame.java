@@ -36,6 +36,8 @@ public class BaseballGame {
 
 			Judge referee = new Judge(userBalls, answerBalls);
 
+			System.out.println(referee.getResult());
+
 			if (referee.isGameEnd()) {
 				System.out.println("정답입니다.");
 				System.out.println("다시시작하려면 1, 끝내려면 2를 입력해주세요");
@@ -46,10 +48,6 @@ public class BaseballGame {
 
 				answerBalls = new Balls();
 			}
-
-
-			System.out.println(referee.getBall() + " 볼 " + referee.getStrike() + " 스트라이크");
-
 		}
 	}
 }

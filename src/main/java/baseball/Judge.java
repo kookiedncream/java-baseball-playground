@@ -50,4 +50,16 @@ public class Judge {
 	public boolean isGameEnd() {
 		return this.strike == 3;
 	}
+
+	public String getResult() {
+		if (this.strike == 0) {
+			return this.ball + "볼";
+		}
+
+		if (this.ball == 0) {
+			return this.strike + "스트라이크";
+		}
+
+		return this.ball + " 볼 " + this.strike + " 스트라이크";
+	}
 }
