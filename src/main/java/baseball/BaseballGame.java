@@ -38,8 +38,15 @@ public class BaseballGame {
 
 			if (referee.isGameEnd()) {
 				System.out.println("정답입니다.");
-				break;
+				System.out.println("다시시작하려면 1, 끝내려면 2를 입력해주세요");
+				int gameMessage = scanner.nextInt();
+				if (gameMessage == 2) {
+					break;
+				}
+
+				answerBalls = new Balls();
 			}
+
 
 			System.out.println(referee.getBall() + " 볼 " + referee.getStrike() + " 스트라이크");
 
