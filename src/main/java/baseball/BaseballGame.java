@@ -41,8 +41,8 @@ public class BaseballGame {
 			if (referee.isGameEnd()) {
 				System.out.println("정답입니다.");
 				System.out.println("다시시작하려면 1, 끝내려면 2를 입력해주세요");
-				int gameMessage = scanner.nextInt();
-				if (gameMessage == 2) {
+				String gameMessage = scanner.nextLine();
+				if (gameMessage == "2") {
 					break;
 				}
 
